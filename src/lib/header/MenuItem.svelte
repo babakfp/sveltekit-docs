@@ -1,13 +1,20 @@
 <script>
 	import { onMount } from 'svelte'
 	import { browser } from '$app/env'
+	import { isMMenuOpen } from '../../stores/header.js'
 	export let item
 	let isOpen = false
+	const toggleSubmenu =_=> {
+		isOpen = !isOpen
+		if (!item.child && item.href) {
+			$isMMenuOpen = false
+		}
+	}
 </script>
 
 <li class="relative md:flex">
 	<a class="flex items-center justify-between gap-1 py-2 px-4 text-white text-opacity-70 hover:text-opacity-90 group" href={item.child ? 'javascript:' : item.href}
-		on:click={_=> (isOpen = !isOpen)}>
+		on:click={toggleSubmenu}>
 		<span>{item.title}</span>
 		{#if item.child}
 			<i class="sk-angle-down text-white text-opacity-50"></i>
@@ -20,7 +27,13 @@
 		">
 			{#each item.child as child}
 				<li>
-					<a class="block py-2 px-8 text-white text-opacity-70 hover:text-opacity-90 md:pr-8" href={child.href}>{child.title}</a>
+					<a class="block py-2 px-8 text-white text-opacity-70 hover:text-opacity-90 md:pr-8" href={child.href}
+						on:click={_=> {
+							$isMMenuOpen = false
+							isOpen = false
+						}}>
+						{child.title}
+					</a>
 				</li>
 			{/each}
 		</ul>

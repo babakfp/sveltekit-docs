@@ -1,13 +1,15 @@
 import { writable, readable } from 'svelte/store'
 import { browser } from '$app/env'
 
-export const isMobileMenuOpen = writable(false)
+export const isMMenuOpen = writable((browser && (window.innerWidth >= 768)) ? true : false)
 
-export const toggleMobileMenu = _ => {
-	isMobileMenuOpen.update(isMobileMenuOpen => !isMobileMenuOpen)
+export const toggleMMenu =_=> {
+	if (!browser) return
+	if (window.innerWidth >= 768) return
+	isMMenuOpen.update(isMMenuOpen => !isMMenuOpen)
 }
 
-export const mainMenuItems = readable([
+export const menuItems = readable([
 	{
 		title: 'Guide',
 		child: [
