@@ -1,0 +1,35 @@
+@use "sass:map"
+@use "sass:list"
+
+@mixin screen($size)
+	$screen: map.get($screens, $size)
+
+	@if $screen == null
+		@error "Screen size not found"
+
+	@media only screen and (min-width: $screen)
+		@content
+
+@mixin screen-reverse($size)
+	$screen: map.get($screens, $size)
+
+	@if $screen == null
+		@error "Screen size not found"
+
+	@media only screen and (max-width: $screen)
+		@content
+
+@mixin screen-advanced($between, $above)
+
+	@if not is-list($between)
+		@error "Type of list expected"
+
+	$between-min-screen: map.get($screens, list.nth($between, 1))
+	$between-max-screen: map.get($screens, list.nth($between, 2))
+	$above-screen: map.get($screens, $above)
+
+	@if is-null($between-min-screen) or is-null($between-max-screen) or is-null($above-screen)
+		@error "Screen size not found"
+
+	@media only screen and (min-width: $between-min-screen) and (max-width: $between-max-screen), (min-width: $above-screen)
+		@content

@@ -1,0 +1,10 @@
+node_modules
+.svelte-kit
+
+pnpm-lock.*
+.pnpm-debug.*
+
+.DS_Store
+
+static/css/app-2.css
+static/css/app-3.css

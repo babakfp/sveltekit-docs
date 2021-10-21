@@ -1,0 +1,44 @@
+.table-wrapper
+	overflow-x: auto
+	overflow-y: hidden
+
+table
+	width: 100%
+
+	&, td, th
+		border: 1px solid $gray-30
+		border-collapse: collapse
+
+// thead
+// 	border-bottom: 2px solid $gray-10
+
+// 	th
+// 		padding-bottom: .5rem
+// 		background: $gray-10
+
+// 		&:first-of-type
+// 			border-top-right-radius: $rounded
+// 		&:last-of-type
+// 			border-top-left-radius: $rounded
+
+th, td
+	text-align: right
+
+th
+	+px(.75rem)
+	+py(.5rem)
+	// +pb(1rem)
+	// +mb(1rem)
+	white-space: nowrap
+	font-weight: 500
+
+td
+	+py(.5rem)
+	+px(.75rem)
+	border-color: $gray-20
+
+tbody tr:not(.h-2):not(.last:h-0)
+	border-collapse: collapse
+	border-bottom: 1px solid $gray-20
+	&:last-of-type
+		border-bottom: unset

@@ -1,0 +1,58 @@
+:root
+	--swiper-theme-color: $brand
+	--swiper-navigation-size: 1.5rem
+	--swiper-navigation-color: white
+
+.swiper
+	width: 100%
+	+rounded
+
+	&-slide img
+		+rounded
+
+	&-pagination
+		bottom: 1rem !important
+
+		&-bullet
+			+width-height(.75rem)
+			background: $gray-30
+			opacity: 1
+
+			&-active
+				background: $brand
+				&:hover
+					background: $brand-deep
+				&:focus
+					background: $brand-deeper
+
+	&-button-prev,
+	&-button-next
+		+width-height(3rem, true)
+		margin-top: unset !important
+		transform: translateY(-50%)
+
+	&-button-prev
+		left: auto !important
+		right: 0 !important
+	
+	&-button-next
+		left: 0 !important
+		right: auto !important
+
+
+
+.js-home-product-slider
+	.swiper-button-prev,
+	.swiper-button-next
+		background: white
+		color: $gray-50
+		+w(rem(50), true)
+		+h(rem(90), true)
+		pointer-events: all
+	
+	.swiper-button-prev
+		box-shadow: -1.5px 0 8px 0 rgb($body-text, .1)
+		border-radius: $rounded 0 0 $rounded
+	.swiper-button-next
+		box-shadow: 1.5px 0 8px 0 rgb($body-text, .1)
+		border-radius: 0 $rounded $rounded 0

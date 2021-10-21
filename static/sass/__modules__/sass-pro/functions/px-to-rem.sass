@@ -1,0 +1,9 @@
+@use "sass:string"
+
+@function px-to-rem($v)
+	$rem: $v / $initial-rem-value
+	@return $rem + rem
+
+@function rem($v)
+	$comment: string.unquote("/* #{$v}px */")
+	@return px-to-rem($v) $comment

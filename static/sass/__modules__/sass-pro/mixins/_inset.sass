@@ -1,0 +1,20 @@
+@mixin inset-x($v)
+	left: #{$v}
+	right: #{$v}
+
+@mixin inset-y($v)
+	top: #{$v}
+	bottom: #{$v}
+
+@mixin inset-center
+	top: 50%
+	right: 50%
+	transform: translate(50%, -50%)
+
+@mixin inset-x-center
+	right: 50%
+	transform: translateX(-50%)
+
+@mixin inset-y-center
+	top: 50%
+	transform: translateY(-50%)

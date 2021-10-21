@@ -1,0 +1,30 @@
+@mixin padding-x($v, $important: false)
+	padding-left: $v print-important($important)
+	padding-right: $v print-important($important)
+
+@mixin padding-y($v, $important: false)
+	padding-top: $v print-important($important)
+	padding-bottom: $v print-important($important)
+
+// Short
+
+@mixin px($v, $important: false)
+	+padding-x($v, $important)
+
+@mixin py($v, $important: false)
+	+padding-y($v, $important)
+
+@mixin p($v, $important: false)
+	padding: $v print-important($important)
+
+@mixin pt($v, $important: false)
+	padding-top: $v print-important($important)
+
+@mixin pr($v, $important: false)
+	padding-right: $v print-important($important)
+
+@mixin pb($v, $important: false)
+	padding-bottom: $v print-important($important)
+
+@mixin pl($v, $important: false)
+	padding-left: $v print-important($important)

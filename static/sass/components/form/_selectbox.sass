@@ -1,0 +1,12 @@
+.selectbox
+	position: relative
+	select
+		appearance: none
+		cursor: pointer
+
+	&::after
+		+icon(angle-small-down)
+		position: absolute
+		+inset-y-center
+		left: 1rem
+		color: $gray-40

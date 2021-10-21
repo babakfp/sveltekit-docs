@@ -1,0 +1,30 @@
+@use "sass:map"
+
+@import reset
+@import fonts
+@import scrollbar
+@import icons-rtl
+
+html
+	font-size: $initial-rem-value
+	scroll-behavior: smooth
+
+body
+	font-family: var(--font-fa-en)
+	background: $body-bg
+	color: $body-text
+	font-weight: 400
+
+button[disabled]
+	cursor: not-allowed
+
+i
+	line-height: 0
+	color: inherit
+	font-size: $icon-default-size
+
+strong
+	font-weight: 600
+
+img
+	max-width: 100%

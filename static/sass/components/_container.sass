@@ -1,0 +1,21 @@
+.container-fluid
+	width: 100%
+	+px(1rem)
+	+mx(auto)
+	&--xl
+		max-width: $xl
+	&--xxl
+		max-width: $xxl
+
+.container
+	@extend .container-fluid
+	@each $k, $v in $screens
+		+screen($k)
+			max-width: $v
+
+	+screen(xl)
+		&--xl
+			max-width: $xl !important
+	+screen(xxl)
+		&--xxl
+			max-width: $xxl !important

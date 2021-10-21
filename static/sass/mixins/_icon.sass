@@ -1,0 +1,5 @@
+@use "sass:map"
+
+@mixin icon($name)
+	font-family: $icons-font-family
+	content: map.get($icons, $name)

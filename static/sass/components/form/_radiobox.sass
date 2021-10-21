@@ -1,0 +1,32 @@
+.radiobox
+	position: relative
+	+width-height(20px)
+	// +minw(20px)
+	// +maxw(20px)
+	// +minh(20px)
+	// +maxh(20px)
+	appearance: none
+	border: 1px solid $gray-30
+	background: white
+	cursor: pointer
+	transition: 150ms ease-in-out
+	border-radius: 100%
+
+	&::after
+		content: ""
+		background: white
+		+width-height(10px)
+		+minw(10px)
+		+maxw(10px)
+		+minh(10px)
+		+maxh(10px)
+		position: absolute
+		+inset-center
+		opacity: 0
+		border-radius: 100%
+
+	&:checked
+		background: $brand
+		border-color: $brand
+		&::after
+			opacity: 1

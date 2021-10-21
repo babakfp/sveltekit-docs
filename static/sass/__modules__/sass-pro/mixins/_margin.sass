@@ -1,0 +1,30 @@
+@mixin margin-x($v, $important: false)
+	margin-left: $v print-important($important)
+	margin-right: $v print-important($important)
+
+@mixin margin-y($v, $important: false)
+	margin-top: $v print-important($important)
+	margin-bottom: $v print-important($important)
+
+// Short
+
+@mixin mx($v, $important: false)
+	+margin-x($v, $important)
+
+@mixin my($v, $important: false)
+	+margin-y($v, $important)
+
+@mixin m($v, $important: false)
+	margin: $v print-important($important)
+
+@mixin mt($v, $important: false)
+	margin-top: $v print-important($important)
+
+@mixin mr($v, $important: false)
+	margin-right: $v print-important($important)
+
+@mixin mb($v, $important: false)
+	margin-bottom: $v print-important($important)
+
+@mixin ml($v, $important: false)
+	margin-left: $v print-important($important)

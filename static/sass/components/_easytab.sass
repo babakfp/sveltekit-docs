@@ -1,0 +1,36 @@
+$_tab-bdr-h: 4px
+
+[easytab-tabs]
+	position: relative
+	&::before
+		content: ""
+		position: absolute
+		bottom: 0
+		+inset-x(0)
+		width: 100%
+		height: $_tab-bdr-h
+		background: $body-bg
+
+[easytab-tab]
+	position: relative
+	+px(1.5rem)
+	+py(1.25rem)
+	transition: 200ms ease-in-out
+	color: $gray-50
+	
+	&::after
+		position: absolute
+		content: ""
+		bottom: 0
+		right: 50%
+		transform: translateX(50%)
+		width: 0
+		height: $_tab-bdr-h
+		transition: 200ms ease-in-out
+	&.active::after
+		width: 100%
+		background: $brand
+
+
+[easytab-content]
+	+p(1.5rem)

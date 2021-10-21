@@ -1,0 +1,57 @@
+$_s2: ".quantity-selector"
+
+#{$_s2}
+	display: inline-flex
+	color: $brand
+	border: 1px solid $gray-20
+	+rounded
+
+	&--short-in-stock
+		#{$_s2}__add
+			pointer-events: none
+			color: $gray-30
+		+screen(md)
+			&#{$_s2}--added-1-item #{$_s2}__remove
+				pointer-events: none
+				color: $gray-30
+
+	&--unavailable-in-stock
+		#{$_s2}__add,
+		#{$_s2}__number
+			display: none
+		#{$_s2}__remove
+			width: tw(9 * 3)
+		+screen(md)
+			display: none
+
+	&--added-1-item
+		#{$_s2}__remove::before
+			+icon(trash)
+			+screen(md)
+				+icon(minus-small)
+
+	&--added-more-than-1-item
+		#{$_s2}__remove::before
+			+icon(minus-small)
+
+	&__add,
+	&__remove,
+	&__number
+		+width-height(tw(9))
+		display: flex
+		align-items: center
+		justify-content: center
+
+	&__add,
+	&__remove
+		&:not([disabled]):hover
+			background: $gray-10
+		&[disabled]
+			pointer-events: none
+			color: $gray-30
+
+	&__add::before
+		+icon(plus-small)
+
+	&__remove::before
+		+icon(minus-small)

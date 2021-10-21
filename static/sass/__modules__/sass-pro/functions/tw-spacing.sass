@@ -1,0 +1,9 @@
+@use "sass:string"
+
+@function tw($v)
+	// 1rem / 4 = .25rem
+	$formula: $v * .25
+
+	$comment: string.unquote("/* #{rem-to-px($formula)} */")
+	
+	@return $formula + rem $comment

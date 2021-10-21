@@ -1,0 +1,22 @@
+// bars-square
+
+.br-theme-bars-square .br-widget
+	height: unset
+	display: flex
+	gap: .5rem
+
+// default
+.br-theme-bars-square .br-widget a
+	color: $gray-50
+	border-color: $gray-20
+	+rounded
+	margin: unset
+	transition: 200ms ease-in
+
+// active
+.br-theme-bars-square .br-widget a.br-active,
+.br-theme-bars-square .br-widget a.br-selected
+	background: $brand
+	border-color: $brand
+	color: white
+	box-shadow: 0 0 8px rgba($brand, .2)

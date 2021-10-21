@@ -1,0 +1,25 @@
+@use "sass:string"
+
+@mixin nth($name, $values)
+	$selectors: ()
+	@each $v in $values
+		$selectors: append($selectors, string.unquote("&:#{$name}(#{$v})"), comma)
+
+	#{$selectors}
+		@content
+
+@mixin nth-child($values)
+	+nth(nth-child, $values)
+		@content
+
+@mixin nth-last-child($values)
+	+nth(nth-last-child, $values)
+		@content
+
+@mixin nth-of-type($values)
+	+nth(nth-of-type, $values)
+		@content
+
+@mixin nth-last-of-type($values)
+	+nth(nth-last-of-type, $values)
+		@content

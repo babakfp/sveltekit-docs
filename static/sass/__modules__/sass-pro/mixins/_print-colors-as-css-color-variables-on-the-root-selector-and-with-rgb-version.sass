@@ -1,0 +1,5 @@
+@mixin print-colors-as-css-color-variables-on-the-root-selector-and-with-rgb-version($colors)
+	:root
+		@each $name, $value in $colors
+			--#{$name}: #{$value}
+			--#{$name}-rgb: #{color.red($value), color.green($value), color.blue($value)}

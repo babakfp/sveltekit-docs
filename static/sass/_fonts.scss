@@ -1,0 +1,38 @@
+@use "./__modules__/sass-font-face" as *;
+
+@include font-face((
+	font-family: Gilroy,
+	suffix: ttf,
+	weight: (
+		Thin 100,
+		UltraLight 200,
+		Light 300,
+		Regular 400,
+		Medium 500,
+		SemiBold 600,
+		Bold 700,
+		ExtraBold 800,
+		"Black" 900,
+		Heavy 950,
+	),
+	url: "../fonts/Gilroy/Gilroy-WEIGHT.SUFFIX"
+));
+
+@include font-face((
+	font-family: Gilroy,
+	font-style: italic,
+	suffix: ttf,
+	weight: (
+		Thin 100,
+		UltraLight 200,
+		Light 300,
+		Regular 400,
+		Medium 500,
+		SemiBold 600,
+		Bold 700,
+		ExtraBold 800,
+		"Black" 900,
+		Heavy 950,
+	),
+	url: "../fonts/Gilroy/Gilroy-WEIGHTItalic.SUFFIX"
+));

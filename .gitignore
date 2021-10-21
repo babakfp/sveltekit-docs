@@ -1,0 +1,7 @@
+node_modules
+.svelte-kit
+
+pnpm-lock.*
+.pnpm-debug.*
+
+.DS_Store

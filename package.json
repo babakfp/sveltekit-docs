@@ -1,0 +1,27 @@
+{
+  "name": "skit",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "app-2:css": "sass static/sass/app-2.sass:static/css/app-2.css --watch --no-source-map",
+    "app-3:css": "sass static/sass/app-3.sass:static/css/app-3.css --watch --no-source-map",
+    "app-2:css:prd": "sass static/sass/app-2.sass:static/css/app-2.css --style compressed --no-source-map"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "next",
+    "@sveltejs/kit": "next",
+    "autoprefixer": "^10.3.7",
+    "cssnano": "^5.0.8",
+    "marked": "^3.0.7",
+    "postcss": "^8.3.10",
+    "postcss-load-config": "^3.1.0",
+    "sass": "^1.43.2",
+    "shiki": "^0.9.12",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.9.8",
+    "tailwindcss": "^2.2.17"
+  }
+}

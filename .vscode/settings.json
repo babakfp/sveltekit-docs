@@ -1,0 +1,34 @@
+{
+	"editor.formatOnSave": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+
+	"sass.disableAutoIndent": true,
+	"sass.disableUnitCompletion": true,
+	"sass.format.enabled": true,
+	"sass.format.deleteWhitespace": true,
+	"sass.format.deleteEmptyRows": true,
+	"sass.format.setPropertySpace": true,
+	"[sass]": {
+		"editor.defaultFormatter": "syler.sass-indented"
+	},
+
+	"emmet.includeLanguages": {
+		"svelte-html": "html"
+	},
+
+	"search.exclude": {
+		"node_modules": true,
+		".svelte-kit": true,
+		".DS_Store": true,
+		"pnpm-lock.*": true,
+		"pnpm-debug.*": true,
+	},
+
+	"files.exclude": {
+		"node_modules": true,
+		".svelte-kit": true
+	}
+}
