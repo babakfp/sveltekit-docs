@@ -44,7 +44,7 @@ const config = {
 	variants: {
 		extend: {
 			translate: ['group-hover'],
-			margin: ['last'],
+			margin: ['first', 'last'],
 			padding: ['last'],
 			borderWidth: ['last'],
 			scale: ['group-hover', 'group-focus'],

@@ -5,7 +5,7 @@
 	import SocialIcon from '$lib/header/SocialIcon.svelte'
 	import Menu from '$lib/header/Menu.svelte'
 
-	import { discordChat, githubRepo } from '../stores/global.js'
+	import { discordChat, githubRepo } from '../../stores/global.js'
 </script>
 
 <header class="relative h-15 flex justify-between pl-2 pr-4 bg-dark-700 md:pl-4">

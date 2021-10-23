@@ -1,9 +1,9 @@
 // @type {import('@sveltejs/kit').Config}
 
+const API_BASE = 'https://api.svelte.dev'
+
 import vercel from '@sveltejs/adapter-vercel'
 import sveltePreprocess from 'svelte-preprocess'
-
-const API_BASE = 'https://api.svelte.dev'
 
 const config = {
 	preprocess: [
@@ -24,7 +24,7 @@ const config = {
 			define: {
 				'process.env.API_BASE': JSON.stringify(API_BASE)
 			}
-		})
+		}),
 	}
 }
 

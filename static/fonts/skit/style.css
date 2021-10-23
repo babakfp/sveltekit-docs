@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'skit';
   src:
-    url('fonts/skit.ttf?64bt6a') format('truetype'),
-    url('fonts/skit.woff?64bt6a') format('woff'),
-    url('fonts/skit.svg?64bt6a#skit') format('svg');
+    url('fonts/skit.ttf?5c0j7x') format('truetype'),
+    url('fonts/skit.woff?5c0j7x') format('woff'),
+    url('fonts/skit.svg?5c0j7x#skit') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,24 +24,30 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.sk-edit-alt:before {
+.sk-menu:before {
   content: "\e900";
 }
-.sk-discord:before {
+.sk-edit-alt:before {
   content: "\e901";
 }
-.sk-github:before {
+.sk-discord:before {
   content: "\e902";
 }
-.sk-close:before {
+.sk-github:before {
   content: "\e903";
 }
-.sk-angle-down:before {
+.sk-plus:before {
   content: "\e904";
 }
-.sk-megaphone:before {
+.sk-close:before {
   content: "\e905";
 }
-.sk-lang:before {
+.sk-angle-down:before {
   content: "\e906";
+}
+.sk-megaphone:before {
+  content: "\e907";
+}
+.sk-lang:before {
+  content: "\e908";
 }

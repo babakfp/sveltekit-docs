@@ -25,6 +25,7 @@
 		".DS_Store": true,
 		"pnpm-lock.*": true,
 		"pnpm-debug.*": true,
+		"/static/sass/__modules__": true,
 	},
 
 	"files.exclude": {
