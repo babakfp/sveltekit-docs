@@ -31,6 +31,6 @@
 		@apply bg-brand;
 	}
 	:global(.loading-bar) {
-		@apply h-0.5 md:h-1;
+		@apply h-1 md:h-0.5;
 	}
 </style>
