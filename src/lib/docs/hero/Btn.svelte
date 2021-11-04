@@ -6,18 +6,18 @@
 {#if href}
 	<li>
 		<a
-			class="flex items-center justify-center w-8 h-8 text-gray-200 text-opacity-70 transition-all duration-200 ease-in hover:text-opacity-100 focus:text-opacity-100"
+			class="flex items-center justify-center w-8 h-8 rounded-md text-white-70 transition-all duration-200 ease-in hover:text-white focus:text-white hover:bg-white-10 focus:bg-white-10 lg:w-12 lg:h-12 lg:rounded"
 			{href}
 		>
-			<i class={icon} />
+			<i class="{icon} lg:text-lg" />
 		</a>
 	</li>
 {:else}
 	<li>
 		<button
-			class="flex items-center justify-center w-8 h-8 text-gray-200 text-opacity-70 transition-all duration-200 ease-in hover:text-opacity-100 focus:text-opacity-100"
+			class="flex items-center justify-center w-8 h-8 rounded-md text-white-70 transition-all duration-200 ease-in hover:text-white focus:text-white hover:bg-white-10 focus:bg-white-10 lg:w-12 lg:h-12 lg:rounded"
 		>
-			<i class={icon} />
+			<i class="{icon} lg:text-lg" />
 		</button>
 	</li>
 {/if}

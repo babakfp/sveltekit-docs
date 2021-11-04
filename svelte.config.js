@@ -1,31 +1,31 @@
-// @type {import('@sveltejs/kit').Config}
-
-const API_BASE = 'https://api.svelte.dev'
-
+import path from 'path'
 import vercel from '@sveltejs/adapter-vercel'
 import sveltePreprocess from 'svelte-preprocess'
 
-const config = {
-	preprocess: [
-		sveltePreprocess({
-			postcss: true,
-			sass: {
-				includePaths: ['static/sass'],
-				prependData: '@import global'
-			},
-		})
-	],
+const API_BASE = 'https://api.svelte.dev'
 
+const config = {
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: vercel(),
 		vite: () => ({
 			define: {
 				'process.env.API_BASE': JSON.stringify(API_BASE)
+			},
+			resolve: {
+				alias: {
+					':lib': path.resolve('./src/lib'),
+					':store': path.resolve('./src/store'),
+					':util': path.resolve('./src/util')
+				}
 			}
-		}),
-	}
+		})
+	},
+	preprocess: [
+		sveltePreprocess({
+			postcss: true
+		})
+	]
 }
 
 export default config

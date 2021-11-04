@@ -4,12 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
+    "dev:network": "svelte-kit dev --host",
     "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
-    "app-2:css": "sass static/sass/app-2.sass:static/css/app-2.css --watch --no-source-map",
-    "app-3:css": "sass static/sass/app-3.sass:static/css/app-3.css --watch --no-source-map",
-    "app-2:css:prd": "sass static/sass/app-2.sass:static/css/app-2.css --style compressed --no-source-map",
-		"prism": "sass static/sass/prism/index.sass:static/css/prism.min.css --watch --style compressed --no-source-map"
+    "preview": "svelte-kit preview"
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "next",

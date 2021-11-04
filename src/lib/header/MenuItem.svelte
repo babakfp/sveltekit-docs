@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { browser } from '$app/env'
-	import { isMMenuOpen } from '../../stores/header.js'
+	import { isMMenuOpen } from ':store/header.js'
 	export let item
 	let isOpen = false
 	const toggleSubmenu =_=> {
@@ -24,6 +24,7 @@
 		<ul class="md:min-w-50 md:rounded md:text-sm
 			md:absolute md:transform md:-translate-y-4 md:invisible md:opacity-0 md:top-full
 			md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-hover:visible
+			md:bg-darker md:whitespace-nowrap
 		">
 			{#each item.child as child}
 				<li>
@@ -41,7 +42,6 @@
 </li>
 
 <style lang="sass">
-	// Submenu
 	ul li
 		&:first-of-type a
 			padding-top: 1rem
@@ -50,11 +50,6 @@
 
 	@media only screen and (min-width: 768px)
 		li > ul
-			// position: absolute !important
-			// transform: translateY(-1rem)
-			// visibility: hidden
-			// opacity: 0
-			// top: calc(100% - 0.5rem)
 			box-shadow: 0 20px 50px 0 rgb(24, 25, 28)
 			max-height: 50vh
 			transition: 200ms ease-in

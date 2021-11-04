@@ -1,18 +1,14 @@
-/* Write your global styles here, in PostCSS syntax */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--ff-main: 'Montserrat';
+	--ff-docs: 'Poppins';
+	--ff-code: 'MonoLisa';
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-img {
-	width: 100%;
-}
-
-svg {
-	width: 100%;
-	max-width: 100%;
-	height: 100%;
-	max-height: 100%;
-}
 
 @layer components {
   .btn {
@@ -26,11 +22,155 @@ svg {
 	.btn--brand:not(.btn--outline) {
 		@apply bg-brand text-white;
 	}
-	/* .btn--brand.btn--outline {
-		@apply text-brand border-brand;
+
+	.link {
+		@apply text-brand transition duration-150 ease-in-out hover:text-brandp;
 	}
-	.btn--brand.btn--outline:hover,
-	.btn--brand.btn--outline:focus {
-		@apply text-white
-	} */
 }
+
+body {
+	@apply bg-dark text-white-90 overflow-x-hidden;
+}
+
+svg {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
+}
+
+.code {
+	color: #bfc7d5;
+	background: #292d3e;
+	padding: 2px 4px;
+	display: inline;
+	border-radius: 4px;
+	/* user-select: all */
+	/* user-select: text */
+	-webkit-font-smoothing: auto;
+	font-smoothing: auto;
+	/* vertical-align: middle */
+
+	max-width: 100%;
+	overflow-x: auto;
+
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	-moz-tab-size: 2;
+	tab-size: 2;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+.code::selection,
+.code *::selection {
+	color: #bfc7d5;
+	background: #404764;
+}
+
+code.language {
+	display: block;
+	padding: 1.75rem;
+	text-align: left;
+	@apply rounded;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	border-width: 0;
+	outline: unset;
+	background: transparent;
+	font-size: unset;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
+main {
+	width: 100%;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+figure {
+	width: 100%;
+}
+
+label {
+	cursor: pointer;
+}
+
+button, input, optgroup, select, textarea {
+	font-family: inherit;
+}
+
+a {
+	color: unset;
+}
+
+button:not(disabled), a {
+	cursor: pointer;
+}
+
+/* Tailwindcss */
+img {
+	border: unset !important;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, .8);
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(33, 35, 39, .4);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(145, 71, 255, .8);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--ff-main);
+}
+
+code, pre {
+	font-family: var(--ff-code);
+}
+
+#docs {
+	font-family: var(--ff-docs);
+	font-weight: 300;
+	line-height: 28px;
+}
+
+i {
+	line-height: 0;
+	color: inherit;
+	font-size: 1rem;
+}
+
+strong {
+	font-weight: 600;
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+}
+
+code{color:#bfc7d5;background:#292d3e;padding:2px 4px;display:inline;border-radius:4px;font-family:"MonoLisa","Consolas","monospace","Vazir UI";-webkit-font-smoothing:auto;font-smoothing:auto;max-width:100%;overflow-x:auto;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;-moz-tab-size:2;tab-size:2;-webkit-hyphens:none;hyphens:none}code::selection,code *::selection{color:#bfc7d5;background:#404764}code.language{display:block;padding:1.75rem;text-align:left}code .comment{color:#697098}code .tag{color:#ff5572}code .tag .punctuation{color:#89ddff}code .attr-name{color:#ffcb6b}code .attr-equals{color:#89ddff}code .attr-equals+.punctuation,code .attr-equals+.punctuation+.punctuation{color:#d9f5dd}code .attr-value{color:#c3e88d}code .html-component{color:#ffcb6b}code .keyword{color:#c792ea}code .function{color:#82aaff}code .function+.punctuation,code .function+.punctuation+.punctuation{color:#d9f5dd}code .function+.punctuation+.punctuation+.punctuation,code .function+.punctuation+.punctuation+.punctuation+.punctuation,code .function+.punctuation+.parameter+.operator{color:#bfc7d5}code .operator{color:#bfc7d5 !important}code .parameter{color:#7986e7}code .parameter .punctuation{color:#bfc7d5}code .function-variable{color:#82aaff}code .function-variable+.operator{color:#c792ea}code .function-variable+.operator+.punctuation,code .function-variable+.operator+.punctuation+.punctuation,code .function-variable+.operator+.punctuation+.parameter+.punctuation{color:#d9f5dd}code .function-variable+.operator+.punctuation+.punctuation+.operator,code .function-variable+.operator+.punctuation+.parameter+.punctuation+.operator,code .function-variable+.operator+.parameter+.operator{color:#c792ea}code .number{color:#f78c6c}code .string{color:#c3e88d}code .class-name{color:#ffcb6b}code.language--css{color:#89ddff}code.language--css .punctuation{color:#bfc7d5}code .atrule .rule{color:#c792ea}code .selector{color:#ffcb6b}code .property{color:#80cbc4}

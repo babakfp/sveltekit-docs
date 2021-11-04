@@ -1,8 +1,8 @@
 <script>
 	import '../app.css'
 
-	import Header from '$lib/header/Index.svelte'
-	import Footer from '$lib/Footer.svelte'
+	import Header from ':lib/header/Index.svelte'
+	import Footer from ':lib/Footer.svelte'
 </script>
 
 <Header />

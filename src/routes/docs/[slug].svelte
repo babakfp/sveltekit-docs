@@ -1,10 +1,9 @@
 <script context="module">
 	import { API_BASE } from '../../_env'
-	export async function load({ fetch }) {
-		const data = await fetch(`${API_BASE}/docs/kit/docs/introduction`).then(r => r.json())
-		const data2 = await fetch(`${API_BASE}/docs/kit/docs`).then(r => r.json())
+	export async function load({ page, fetch }) {
+		const data = await fetch(`${API_BASE}/docs/kit/docs/${page.params.slug}`).then(r => r.json())
 		return {
-			props: { data, data2 },
+			props: { data },
 			maxage: 60,
 		}
 	}
@@ -12,7 +11,6 @@
 
 <script>
 	export let data
-	export let data2
 	import Menu from ':lib/sidemenu/Index.svelte'
 	import Docs from ':lib/docs/Index.svelte'
 </script>
@@ -20,7 +18,8 @@
 <svelte:head>
 	<title>Documentation</title>
 </svelte:head>
+<!-- 
+<Menu {sections} />
 
-<Menu data={data2} />
-
+ -->
 <Docs {data} />

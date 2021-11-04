@@ -1,10 +1,9 @@
 <script>
-	import { discordChat, githubRepo } from '../stores/global.js'
-	import EyeCatchingFeature from '$lib/home/EyeCatchingFeature.svelte'
+	import { githubRepo } from ':store/global.js'
+	import EyeCatchingFeature from ':lib/home/EyeCatchingFeature.svelte'
 </script>
 
-<section class="relative mt-12 md:flex items-center gap:10 md:mt-16">
-	<img class="max-w-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5" src="img/skit-factory-2.png" alt="SvelteKit Factory">
+<section class="mt-12 md:flex items-center gap:10 md:mt-16">
 	<div class="relative grid gap-8 mx-auto w-full max-w-sm">
 		<div class="text-center">
 			<h1 class="text-2xl font-semibold italic">A fully featured web framework for <a class="text-brand not-italic" href="https://svelte.dev">SvelteJS</a></h1>
@@ -13,13 +12,13 @@
 		
 		<div class="grid gap-4 justify-items-center">
 			<!-- TODO: Shadow on hover, focus -->
-			<a id="go-to-docs-btn" class="btn btn--brand w-full h-12 px-6 text-white text-opacity-70 font-medium" href="docs">Get Started</a>
+			<a id="go-to-docs-btn" class="btn btn--brand w-full h-12 px-6 text-white text-opacity-70 font-medium" href="/docs">Get Started</a>
 			<div class="flex gap-4 w-full">
-				<a class="btn w-full h-12 px-6 bg-dark-800 text-white text-opacity-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href={$discordChat}>
+				<a class="btn w-full h-12 px-6 bg-darker text-white text-opacity-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href="/chat">
 					<i class="sk-discord opacity-80"></i>
 					<span>Discord</span>
 				</a>
-				<a class="btn w-full h-12 px-6 bg-dark-800 text-white text-opacity-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href={$discordChat}>
+				<a class="btn w-full h-12 px-6 bg-darker text-white text-opacity-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href={$githubRepo}>
 					<i class="sk-github opacity-80"></i>
 					<span>Github</span>
 				</a>

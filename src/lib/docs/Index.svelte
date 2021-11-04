@@ -1,25 +1,31 @@
 <script>
-	import Hero from '$lib/docs/hero/Index.svelte'
-	export let sections
+	import Hero from ':lib/docs/hero/Index.svelte'
+	export let data
 </script>
 
-<div
-	class="w-full bg-dark-900 lg:bg-dark-800 lg:rounded-3xl lg:overflow-hidden lg:mb-8"
->
-	{#each sections as section}
-		<Hero
-			title={section.title}
-			slug={section.slug}
-			file={section.file}
-		/>
-		<div
-			class="pt-8 pb-12 bg-dark-800 rounded-tr-3xl rounded-bl-3xl text-gray-200 text-opacity-70 lg:text-base"
-		>
-			<div class="container max-w-2xl markdown overflow-x-auto">
-				<div id="docs__content">
-					{@html section.content}
-				</div>
+<div class="content w-full bg-darkest lg:bg-darker lg:overflow-hidden lg:mb-8">
+	<Hero
+		title={data.title}
+		slug={data.slug}
+		file={data.file}
+	/>
+	<div class="pt-8 pb-12 bg-darker rounded-tr-3xl rounded-bl-3xl text-white-70 lg:text-base">
+		<div class="container px-4 max-w-2xl markdown overflow-x-auto">
+			<div id="docs">
+				{@html data.content}
 			</div>
 		</div>
-	{/each}
+	</div>
 </div>
+
+<style lang="sass">
+	.content
+		max-width: calc(100% - 16rem)
+		margin-left: auto
+	:global(#docs h2),
+	:global(#docs h3),
+	:global(#docs h4),
+	:global(#docs h5),
+	:global(#docs h6)
+		color: rgb(white, .9) !important
+</style>

@@ -1,23 +1,9 @@
 <script>
-	export let sections
+	export let data
 	import { onMount } from 'svelte'
 	import { browser } from '$app/env'
 
-	import { isSideMenuOpen, closeSideMenu } from '../../stores/header'
-
-	// import { stores } from '@sapper/app'
-	// const { preloading } = stores()
-	// if ($preloading) $isSideMenuOpen = false
-
-	$: if (windowWidth <= 1024) {
-		if ($isSideMenuOpen) {
-			if (browser) document.body.classList.add('overflow-y-hidden')
-		} else {
-			if (browser) document.body.classList.remove('overflow-y-hidden')
-		}
-	} else {
-		if (browser) document.body.classList.remove('overflow-y-hidden')
-	}
+	import { isSideMenuOpen, closeSideMenu } from ':store/header'
 
 	let windowWidth = 0
 	let y = 0
@@ -25,65 +11,44 @@
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={y} />
 <div
-	class="
+	class="nav-container
 		{$isSideMenuOpen || windowWidth >= 1024 ? '' : 'hidden'}
-		z-40 fixed left-0 right-0 bottom-0 lg:z-0 lg:sticky lg:inset-auto lg:top-4 lg:w-64"
+		z-40 fixed left-0 right-0 bottom-0 h-full bg-darkest bg-opacity-50 lg:z-0 lg:inset-auto lg:w-64"
 		on:click|self={() => closeSideMenu()}
 		>
 	<nav
-		class="py-4 relative w-64 h-full bg-gradient-to-b from-dark-900 to-dark-700 lg:w-60 lg:sticky lg:top-4 lg:px-0 lg:pb-8 lg:shadow-none lg:from-dark-700"
+		class="relative w-64 h-full bg-gradient-to-b from-darkest to-dark lg:from-dark"
 	>
-		<div
-			class="h-full overflow-y-auto pb-2
-			{windowWidth >= 1024 ? 'desktop-scrollbar' : 'mobile-scrollbar'}"
-		>
+		<div class="h-full overflow-y-auto py-4 pb-2 scrollable-box lg:border-r lg:border-white-10">
 			<ul class="space-y-8">
-				{#each sections as section}
+				{#each data as dlvl1}
 					<li>
 						<a
-							class="block py-1 px-5 font-medium lg:px-6"
-							href="docs/#{section.slug}"
-							>{section.title}</a
+							class="block py-2 px-5 font-semibold lg:px-6 hover:bg-brand hover:bg-opacity-20"
+							href="docs/{dlvl1.slug}"
+							>{dlvl1.title}</a
 						>
 						<ul class="text-sm">
-							{#each section.sections as subsection}
-								<li>
-									<!-- {#if subsection.level === 3} -->
-									<a
-										class="block py-1 px-5 text-gray-200 text-opacity-70 transition-all duration-200 ease-in hover:text-opacity-100 focus:text-opacity-100 lg:px-6"
-										href="docs/#{section.slug}__{subsection.slug}"
-										>{subsection.title}</a
-									>
-									{#if subsection.sections}
-										{#each subsection.sections as subsubsection}
-											<a
-												class="relative block py-1 px-9 text-gray-200 text-opacity-70 transition-all duration-200 ease-in hover:text-opacity-100 focus:text-opacity-100 lg:px-8"
-												href="docs/#{section.slug}__{subsubsection.slug}"
-												>{subsubsection.title}
-											</a>
-										{/each}
-									{/if}
-									<!-- {:else}
+							{#if dlvl1.sections.length > 0}
+								{#each dlvl1.sections as subsection}
+									<li>
 										<a
-											class="relative block py-1 px-9 text-gray-200 text-opacity-70 transition-all duration-200 ease-in hover:text-opacity-100 focus:text-opacity-100 lg:px-6"
-											href="docs/#{section.slug}__{subsection.slug}"
-											>{subsection.title}
-										</a>
-									{/if} -->
-									<!-- <ul>
-										<li>
-											<a
-												class="relative block py-1 px-9 text-gray-200 text-opacity-70 transition-all duration-200 ease-in hover:text-opacity-100 focus:text-opacity-100 lg:px-6"
-												href="/"
-												>Introduction
-												<div
-													class="absolute left-0 inset-y-center w-0.75 h-4.5 bg-white rounded-r-full"
-												/>
-											</a>
-										</li>
-									</ul> -->
-								</li>
-							{/each}
+											class="block py-2 px-5 text-white-70 transition-all duration-200 ease-in hover:text-white focus:text-white lg:px-6 hover:bg-brand hover:bg-opacity-20"
+											href="docs/{dlvl1.slug}#{subsection.slug}"
+											>{subsection.title}</a
+										>
+										{#if subsection.sections.length > 0}
+											{#each subsection.sections as subsubsection}
+												<a
+													class="relative block py-2 px-9 text-white-70 transition-all duration-200 ease-in hover:text-white focus:text-white lg:px-8 hover:bg-brand hover:bg-opacity-20"
+													href="docs/{dlvl1.slug}#{subsubsection.slug}"
+													>{subsubsection.title}
+												</a>
+											{/each}
+										{/if}
+									</li>
+								{/each}
+							{/if}
 						</ul>
 					</li>
 				{/each}
@@ -92,13 +57,27 @@
 	</nav>
 </div>
 
-<button class="z-50 fixed bottom-4 right-4 flex items-center justify-center w-15 h-15 rounded-full bg-dark-900 text-white border-2 border-white border-opacity-5"
-on:click={_=> $isSideMenuOpen = !$isSideMenuOpen}>
+<button
+	class="z-50 fixed bottom-4 right-4 flex items-center justify-center w-15 h-15 rounded-full bg-darkest text-white border-2 border-white border-opacity-5 lg:hidden"
+	on:click={_=> $isSideMenuOpen = !$isSideMenuOpen}
+>
 	<i class="sk-menu"></i>
 </button>
 
-<style>
-	/* nav {
-		box-shadow: 999px 999px 0px 999px rgb(20, 20, 23, 0.7);
-	} */
+<style lang="sass">
+	@media (min-width: 1024px)
+		.nav-container
+			height: calc(100vh - 60px)
+	.scrollable-box
+		&::-webkit-scrollbar
+			&-track
+				background: transparent
+			&-thumb
+				background: rgba(white, .0) !important
+				&:hover
+					background: rgba(145, 71, 255, .0) !important
+		&:hover::-webkit-scrollbar-thumb
+			background: rgba(white, .1) !important
+			&:hover
+				background: rgba(145, 71, 255, .8) !important
 </style>
