@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Migration</title>
+	<title>FAQ</title>
 </svelte:head>
 
 <Page {sections} />
