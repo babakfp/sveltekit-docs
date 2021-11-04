@@ -55,7 +55,7 @@
 		@apply bg-brand;
 	}
 	:global(.loading-bar) {
-		@apply h-1 md:h-0.5;
+		@apply h-1 lg:h-0.5;
 	}
 	:global(.goup--hidden) {
 		@apply transform translate-y-20;
