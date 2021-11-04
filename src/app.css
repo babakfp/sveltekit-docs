@@ -181,7 +181,7 @@ img {
 }
 
 .markdown a:not(.anchor) {
-	@apply border-b border-dashed border-brand border-opacity-90 hover:text-brand;
+	@apply border-b border-dashed border-brand border-opacity-70 hover:text-brand;
 }
 
 .markdown a:not(.anchor):focus {
