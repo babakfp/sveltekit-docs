@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation'
 	import { browser } from '$app/env';
-	import { discordChat } from ':store/global.js'
+	import { discordChat } from ':stores/global.js'
 	if (browser) goto($discordChat)
 </script>
 

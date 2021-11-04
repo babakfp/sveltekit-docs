@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { browser } from '$app/env'
-	import { isMMenuOpen } from ':store/header.js'
+	import { isMMenuOpen } from ':stores/header.js'
 	export let item
 	let isOpen = false
 	const toggleSubmenu =_=> {

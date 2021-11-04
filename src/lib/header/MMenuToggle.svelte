@@ -1,5 +1,5 @@
 <script>
-	import { isMMenuOpen, toggleMMenu } from ':store/header.js'
+	import { isMMenuOpen, toggleMMenu } from ':stores/header.js'
 </script>
 
 <button class="mmenu-toggle group -ml-2 px-4 md:hidden" on:click={toggleMMenu}>

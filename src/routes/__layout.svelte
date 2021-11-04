@@ -1,14 +1,22 @@
 <script>
+	import { page } from '$app/stores';
 	import '../app.css'
 
-	import Header from ':lib/header/Index.svelte'
-	import Footer from ':lib/Footer.svelte'
+	// Layouts
+	import Default from ':layouts/Default.svelte'
+	import Home from ':layouts/Home.svelte'
+	import Docs from ':layouts/Docs.svelte'
+	import Page from ':layouts/Page.svelte'
+	
+	const layouts = {
+		'/': Home,
+		'/docs': Docs,
+		'/migration': Page,
+		'/faq': Page,
+	}
+	$: layout = layouts[$page.path] ?? Default
 </script>
 
-<Header />
-
-<main class="px-4">
+<svelte:component this={layout}>
 	<slot />
-</main>
-
-<Footer />
+</svelte:component>

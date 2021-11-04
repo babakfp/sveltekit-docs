@@ -3,8 +3,9 @@
 		"baseUrl": ".",
 		"paths": {
 			":lib": ["src/lib"],
-			":store": ["src/store"],
-			":util": ["src/util"]
+			":layouts": ["src/layouts"],
+			":stores": ["src/stores"],
+			":utils": ["src/utils"]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]

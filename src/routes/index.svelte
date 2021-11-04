@@ -1,5 +1,5 @@
 <script>
-	import { githubRepo } from ':store/global.js'
+	import { githubRepo } from ':stores/global.js'
 	import EyeCatchingFeature from ':lib/home/EyeCatchingFeature.svelte'
 </script>
 

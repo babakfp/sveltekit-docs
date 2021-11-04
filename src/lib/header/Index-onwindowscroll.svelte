@@ -4,7 +4,7 @@
 	import VersionNumber from './VersionNumber.svelte'
 	import SocialIcon from './Widget.svelte'
 	import Menu from './Menu.svelte'
-	import { githubRepo } from ':store/global.js'
+	import { githubRepo } from ':stores/global.js'
 
 	// let hidden = true
 

@@ -1,23 +1,26 @@
 <script>
 	export let icon
 	export let href
+	export let title
 </script>
 
 {#if href}
 	<li>
 		<a
-			class="flex items-center justify-center w-8 h-8 rounded-md text-white-70 transition-all duration-200 ease-in hover:text-white focus:text-white hover:bg-white-10 focus:bg-white-10 lg:w-12 lg:h-12 lg:rounded"
+			class="flex items-center justify-center w-8 h-8 rounded-md text-white-70 transition-all duration-200 ease-in-out hover:text-white focus:text-white hover:bg-white-10 focus:bg-white-10 md:w-12 md:h-12 md:rounded"
 			{href}
+			{title}
 		>
-			<i class="{icon} lg:text-lg" />
+			<i class="{icon} md:text-lg" />
 		</a>
 	</li>
 {:else}
 	<li>
 		<button
-			class="flex items-center justify-center w-8 h-8 rounded-md text-white-70 transition-all duration-200 ease-in hover:text-white focus:text-white hover:bg-white-10 focus:bg-white-10 lg:w-12 lg:h-12 lg:rounded"
+			class="flex items-center justify-center w-8 h-8 rounded-md text-white-70 transition-all duration-200 ease-in-out hover:text-white focus:text-white hover:bg-white-10 focus:bg-white-10 md:w-12 md:h-12 md:rounded"
+			{title}
 		>
-			<i class="{icon} lg:text-lg" />
+			<i class="{icon} md:text-lg" />
 		</button>
 	</li>
 {/if}

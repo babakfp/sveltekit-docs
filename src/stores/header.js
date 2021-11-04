@@ -22,16 +22,16 @@ export const menuItems = readable([
 		child: [
 			{
 				title: 'What is SvelteKit?',
-				href: '/what-is-sveltekit',
+				href: '/docs#introduction-what-is-sveltekit',
 			},
 			{
 				title: 'Getting Started',
-				href: '/getting-started',
+				href: '/docs#introduction-getting-started',
 			},
 		],
 	},
 	{
-		title: 'Documentation',
+		title: 'Docs',
 		href: '/docs',
 	},
 	{

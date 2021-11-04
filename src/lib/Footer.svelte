@@ -1,5 +1,5 @@
 <script>
-	import { githubRepo } from ':store/global.js'
+	import { githubRepo } from ':stores/global.js'
 </script>
 
 <footer class="mt-12 px-4 pt-8 pb-12 bg-darker md:mt-16 md:py-12 md:px-10">

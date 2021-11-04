@@ -1,7 +1,7 @@
 <script>
 	import OutClick from 'svelte-outclick'
 	import MenuItem from ':lib/header/MenuItem.svelte'
-	import { isMMenuOpen, menuItems } from ':store/header.js'
+	import { isMMenuOpen, menuItems } from ':stores/header.js'
 </script>
 
 <OutClick on:outclick={_=> $isMMenuOpen = false} exclude={['.mmenu-toggle']}>
