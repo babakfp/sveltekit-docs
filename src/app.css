@@ -29,7 +29,12 @@
 }
 
 body {
-	@apply bg-dark text-white-90 overflow-x-hidden;
+	@apply bg-dark text-white-90;
+	font-family: var(--ff-main);
+}
+
+body, main {
+	@apply overflow-x-hidden;
 }
 
 svg {
@@ -39,33 +44,39 @@ svg {
 	max-height: 100%;
 }
 
-.code {
+code {
 	color: #bfc7d5;
 	background: #292d3e;
-	padding: 2px 4px;
 	display: inline;
 	border-radius: 4px;
-	/* user-select: all */
-	/* user-select: text */
+	user-select: all;
+	user-select: text;
 	-webkit-font-smoothing: auto;
 	font-smoothing: auto;
-	/* vertical-align: middle */
+	vertical-align: middle;
 
 	max-width: 100%;
 	overflow-x: auto;
 
-	white-space: pre;
 	word-spacing: normal;
-	word-break: normal;
 	word-wrap: normal;
 	-moz-tab-size: 2;
 	tab-size: 2;
 	-webkit-hyphens: none;
 	hyphens: none;
+	padding: 4px 6px;
+	white-space: unset;
+	word-break: break-word;
 }
 
-.code::selection,
-.code *::selection {
+pre code {
+	padding: 2px 4px;
+	white-space: pre;
+	word-break: normal;
+}
+
+code::selection,
+code *::selection {
 	color: #bfc7d5;
 	background: #404764;
 }
@@ -144,10 +155,6 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	font-family: var(--ff-main);
-}
-
 code, pre {
 	font-family: var(--ff-code);
 }
@@ -173,7 +180,7 @@ img {
 	max-width: 100%;
 }
 
-code{color:#bfc7d5;background:#292d3e;padding:2px 4px;display:inline;border-radius:4px;font-family:"MonoLisa","Consolas","monospace","Vazir UI";-webkit-font-smoothing:auto;font-smoothing:auto;max-width:100%;overflow-x:auto;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;-moz-tab-size:2;tab-size:2;-webkit-hyphens:none;hyphens:none}code::selection,code *::selection{color:#bfc7d5;background:#404764}code.language{display:block;padding:1.75rem;text-align:left}code .comment{color:#697098}code .tag{color:#ff5572}code .tag .punctuation{color:#89ddff}code .attr-name{color:#ffcb6b}code .attr-equals{color:#89ddff}code .attr-equals+.punctuation,code .attr-equals+.punctuation+.punctuation{color:#d9f5dd}code .attr-value{color:#c3e88d}code .html-component{color:#ffcb6b}code .keyword{color:#c792ea}code .function{color:#82aaff}code .function+.punctuation,code .function+.punctuation+.punctuation{color:#d9f5dd}code .function+.punctuation+.punctuation+.punctuation,code .function+.punctuation+.punctuation+.punctuation+.punctuation,code .function+.punctuation+.parameter+.operator{color:#bfc7d5}code .operator{color:#bfc7d5 !important}code .parameter{color:#7986e7}code .parameter .punctuation{color:#bfc7d5}code .function-variable{color:#82aaff}code .function-variable+.operator{color:#c792ea}code .function-variable+.operator+.punctuation,code .function-variable+.operator+.punctuation+.punctuation,code .function-variable+.operator+.punctuation+.parameter+.punctuation{color:#d9f5dd}code .function-variable+.operator+.punctuation+.punctuation+.operator,code .function-variable+.operator+.punctuation+.parameter+.punctuation+.operator,code .function-variable+.operator+.parameter+.operator{color:#c792ea}code .number{color:#f78c6c}code .string{color:#c3e88d}code .class-name{color:#ffcb6b}code.language--css{color:#89ddff}code.language--css .punctuation{color:#bfc7d5}code .atrule .rule{color:#c792ea}code .selector{color:#ffcb6b}code .property{color:#80cbc4}
+
 
 .markdown a:not(.anchor) {
 	@apply text-brand border-b border-dashed border-brand border-opacity-75;
@@ -246,4 +253,126 @@ code{color:#bfc7d5;background:#292d3e;padding:2px 4px;display:inline;border-radi
 :global(.markdown h5),
 :global(.markdown h6) {
 	color: rgb(white, .9) !important
+}
+
+code.language {
+	display: block;
+	padding: 1.75rem;
+	text-align: left
+}
+
+code .comment {
+	color: #697098
+}
+
+code .tag {
+	color: #ff5572
+}
+
+code .tag .punctuation {
+	color: #89ddff
+}
+
+code .attr-name {
+	color: #ffcb6b
+}
+
+code .attr-equals {
+	color: #89ddff
+}
+
+code .attr-equals+.punctuation,
+code .attr-equals+.punctuation+.punctuation {
+	color: #d9f5dd
+}
+
+code .attr-value {
+	color: #c3e88d
+}
+
+code .html-component {
+	color: #ffcb6b
+}
+
+code .keyword {
+	color: #c792ea
+}
+
+code .function {
+	color: #82aaff
+}
+
+code .function+.punctuation,
+code .function+.punctuation+.punctuation {
+	color: #d9f5dd
+}
+
+code .function+.punctuation+.punctuation+.punctuation,
+code .function+.punctuation+.punctuation+.punctuation+.punctuation,
+code .function+.punctuation+.parameter+.operator {
+	color: #bfc7d5
+}
+
+code .operator {
+	color: #bfc7d5 !important
+}
+
+code .parameter {
+	color: #7986e7
+}
+
+code .parameter .punctuation {
+	color: #bfc7d5
+}
+
+code .function-variable {
+	color: #82aaff
+}
+
+code .function-variable+.operator {
+	color: #c792ea
+}
+
+code .function-variable+.operator+.punctuation,
+code .function-variable+.operator+.punctuation+.punctuation,
+code .function-variable+.operator+.punctuation+.parameter+.punctuation {
+	color: #d9f5dd
+}
+
+code .function-variable+.operator+.punctuation+.punctuation+.operator,
+code .function-variable+.operator+.punctuation+.parameter+.punctuation+.operator,
+code .function-variable+.operator+.parameter+.operator {
+	color: #c792ea
+}
+
+code .number {
+	color: #f78c6c
+}
+
+code .string {
+	color: #c3e88d
+}
+
+code .class-name {
+	color: #ffcb6b
+}
+
+code.language--css {
+	color: #89ddff
+}
+
+code.language--css .punctuation {
+	color: #bfc7d5
+}
+
+code .atrule .rule {
+	color: #c792ea
+}
+
+code .selector {
+	color: #ffcb6b
+}
+
+code .property {
+	color: #80cbc4
 }
