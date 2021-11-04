@@ -3,6 +3,10 @@
 	import EyeCatchingFeature from ':lib/home/EyeCatchingFeature.svelte'
 </script>
 
+<svelte:head>
+	<title>SvelteKit Documentation</title>
+</svelte:head>
+
 <section class="mt-12 md:flex items-center gap:10 md:mt-16">
 	<div class="relative grid gap-8 mx-auto w-full max-w-sm">
 		<div class="text-center">

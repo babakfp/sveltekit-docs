@@ -5,4 +5,8 @@
 	if (browser) goto($discordChat)
 </script>
 
+<svelte:head>
+	<title>Chat</title>
+</svelte:head>
+
 <h1 class="text-center font-bold mt-8">Redirecting...</h1>
