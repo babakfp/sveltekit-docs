@@ -70,7 +70,7 @@ code {
 }
 
 pre code {
-	padding: 2px 4px;
+	@apply block p-6 rounded;
 	white-space: pre;
 	word-break: normal;
 }
@@ -159,12 +159,6 @@ code, pre {
 	font-family: var(--ff-code);
 }
 
-.docs {
-	font-family: var(--ff-docs);
-	font-weight: 300;
-	line-height: 32px;
-}
-
 i {
 	line-height: 0;
 	color: inherit;
@@ -178,6 +172,12 @@ strong {
 img {
 	width: 100%;
 	max-width: 100%;
+}
+
+.markdown {
+	font-family: var(--ff-docs);
+	/* font-weight: 300; */
+	line-height: 32px;
 }
 
 .markdown a:not(.anchor) {
@@ -208,11 +208,7 @@ img {
 	padding-right: 10px;
 }
 
-.markdown pre code {
-	@apply block p-6 rounded-md;
-}
-
-.markdown > * {
+.markdown *:not(:last-child) {
 	@apply mb-5;
 }
 
@@ -242,6 +238,17 @@ img {
 
 .markdown table thead tr th {
 	text-align: left;
+}
+
+.markdown blockquote {
+	@apply relative py-3 px-4 rounded bg-white-10;
+}
+
+.markdown blockquote::before {
+	content: '';
+	width: 2px;
+	height: calc(100% - 24px);
+	@apply absolute left-0 bg-white-40;
 }
 
 :global(.markdown h2),
