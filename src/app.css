@@ -180,11 +180,8 @@ img {
 	max-width: 100%;
 }
 
-
-
 .markdown a:not(.anchor) {
-	@apply text-brand border-b border-dashed border-brand border-opacity-75;
-	@apply hover:text-brandp hover:border-brandp;
+	@apply border-b border-dashed border-brand border-opacity-90 hover:text-brand;
 }
 
 .markdown a:not(.anchor):focus {
