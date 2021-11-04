@@ -1,8 +1,25 @@
 import { writable, readable } from 'svelte/store'
 import { browser } from '$app/env'
 
-export const isMMenuOpen = writable(browser && window.innerWidth >= 768 ? true : false)
-export const isSideMenuOpen = writable(browser && window.innerWidth >= 1024 ? true : false)
+export const isMMenuOpen = writable(false)
+export const isSideMenuOpen = writable(false)
+
+if (browser) {
+	if (window.innerWidth >= 768) isMMenuOpen.set(true)
+	if (window.innerWidth >= 1024) isSideMenuOpen.set(true)
+	window.addEventListener('resize', _=> {
+		if (window.innerWidth >= 768) {
+			isMMenuOpen.set(true)
+		} else {
+			isMMenuOpen.set(false)
+		}
+		if (window.innerWidth >= 1024) {
+			isSideMenuOpen.set(true)
+		} else {
+			isSideMenuOpen.set(false)
+		}
+	})
+}
 
 export const toggleMMenu =_=> {
 	if (!browser) return
