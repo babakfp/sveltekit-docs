@@ -10,10 +10,8 @@ const config = {
 		// Some plugins like tailwindcss and nesting, need to run before Tailwind,
 		tailwindcss(),
 		// ...but others like autoprefixer, need to run after,
-		autoprefixer(),
-		!dev && cssnano({
-			preset: 'default'
-		})
+		!dev && autoprefixer(),
+		!dev && cssnano({ preset: 'default' }),
 	]
 }
 
