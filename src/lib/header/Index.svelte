@@ -32,6 +32,11 @@
 					<i class="sk-github" />
 				</a>
 			</li>
+			<li>
+				<a class="widget" href="https://svelte.dev" target="_blank">
+					<i class="sk-svelte" />
+				</a>
+			</li>
 		</ul>
 	</div>
 </header>
