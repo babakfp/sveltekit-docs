@@ -178,16 +178,15 @@ img {
 }
 
 .markdown {
+	@apply text-white-70 leading-8;
 	font-family: var(--ff-docs);
-	/* font-weight: 300; */
-	line-height: 32px;
 }
 
-.markdown a:not(.anchor) {
+.markdown a:not(.anchor):not(.btn) {
 	@apply border-b border-dashed border-brand border-opacity-70 hover:text-brand;
 }
 
-.markdown a:not(.anchor):focus {
+.markdown a:not(.anchor):not(.btn):focus {
 	outline-offset: 2px;
 	outline: 2px dotted rgba(255, 255, 255, .7);
 }

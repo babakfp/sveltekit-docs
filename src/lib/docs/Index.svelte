@@ -10,7 +10,7 @@
 			slug={section.slug}
 			file={section.file}
 		/>
-		<div class="pt-8 pb-12 bg-darker rounded-tr-3xl rounded-bl-3xl text-white-70 lg:text-base">
+		<div class="pt-8 pb-12 bg-darker rounded-tr-3xl rounded-bl-3xl lg:text-base">
 			<div class="container px-4 max-w-2xl">
 				<div id={section.slug} class="markdown">
 					{@html section.content}
