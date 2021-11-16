@@ -1,7 +1,7 @@
 <script context="module">
-	import { API_BASE } from '../_env'
+	import { API_BASE } from ':src/_env'
 	export async function load({ fetch }) {
-		const sections = await fetch(`${API_BASE}/docs/kit/migrating?content`).then(r => r.json())
+		const sections = await fetch(`${API_BASE}/docs/kit/faq?content`).then(r => r.json())
 		return {
 			props: { sections },
 			maxage: 60,
@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Migration</title>
+	<title>FAQ</title>
 </svelte:head>
 
 <Page {sections} />

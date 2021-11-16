@@ -1,5 +1,5 @@
 <script context="module">
-	import { API_BASE } from '../_env'
+	import { API_BASE } from ':src/_env'
 	export async function load({ fetch }) {
 		const sections = await fetch(`${API_BASE}/docs/kit/docs?content`).then(r => r.json())
 		const sidebarNavItems = await fetch(`${API_BASE}/docs/kit/docs`).then(r => r.json())
