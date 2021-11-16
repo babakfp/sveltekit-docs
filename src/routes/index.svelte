@@ -1,6 +1,7 @@
 <script>
 	import { githubRepo } from ':stores/global.js'
 	import EyeCatchingFeature from ':lib/home/EyeCatchingFeature.svelte'
+	import InstallationCodeBlock from ':lib/home/InstallationCodeBlock.svelte'
 </script>
 
 <svelte:head>
@@ -16,13 +17,13 @@
 		
 		<div class="grid gap-4 justify-items-center">
 			<!-- TODO: Shadow on hover, focus -->
-			<a id="go-to-docs-btn" class="btn btn--brand w-full h-12 px-6 text-white text-opacity-70 font-medium" href="/docs">Get Started</a>
+			<a id="go-to-docs-btn" class="btn btn--brand w-full h-12 px-6 text-white-70 font-medium" href="/docs">Get Started</a>
 			<div class="flex gap-4 w-full">
-				<a class="btn w-full h-12 px-6 bg-darker text-white text-opacity-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href="/chat">
+				<a class="btn w-full h-12 px-6 bg-darker text-white-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href="/chat">
 					<i class="sk-discord opacity-80"></i>
 					<span>Discord</span>
 				</a>
-				<a class="btn w-full h-12 px-6 bg-darker text-white text-opacity-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href={$githubRepo}>
+				<a class="btn w-full h-12 px-6 bg-darker text-white-70 border-white border-opacity-10 hover:border-opacity-20 focus:border-opacity-20" href={$githubRepo}>
 					<i class="sk-github opacity-80"></i>
 					<span>Github</span>
 				</a>
@@ -60,17 +61,18 @@
 	</div>
 </section>
 
-<!-- <section class="max-w-sm mt-12 mx-auto md:max-w-5xl md:px-10 md:mt-16">
-	{#await $highlighter}
-		<p>...waiting</p>
-	{:then result}
-		{result}
-	{:catch error}
-		Something went wrong.
-		<br>
-		<p>{error.message}</p>
-	{/await}
-</section> -->
+<section class="markdown mt-12 md:mt-16 md:px-10 lg:pt-16 lg:border-t lg:border-white-10">
+	<div class="max-w-sm mx-auto md:grid md:grid-cols-2 md:gap-12 md:max-w-5xl">
+		<div>
+			<p>SvelteKit is a framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.</p>
+			<p>Unlike single-page apps, SvelteKit doesn't compromise on SEO, progressive enhancement or the initial load experience — but unlike traditional server-rendered apps, navigation is instantaneous for that app-like feel.</p>
+		</div>
+		<div>
+			<InstallationCodeBlock />
+			<a class="btn btn--brand h-12 px-6 text-white-70 font-medium" href="/docs#introduction-getting-started">Documentation</a>
+		</div>
+	</div>
+</section>
 
 <style lang="sass">
 	#go-to-docs-btn
