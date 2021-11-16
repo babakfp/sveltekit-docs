@@ -50,14 +50,12 @@
 				description="Cybernetically enhanced web apps. Build big (even bigger) apps with small (even smaller) footprints."
 				href="https://svelte.dev"
 			/>
-			<!-- <a class='text-brand text-opacity-70 transition duration-300 hover:text-opacity-90' href='https://svelte.dev'>Learn more about SvelteJS here.</a> -->
 			<EyeCatchingFeature
 				borderColor="border-vite"
 				title="Powered by <span class='italic'>ViteJS</span>"
 				description="💡 Instant server start, ⚡️ Lightning fast <span title='Hot Module Replacement'>HMR</span>, 🛠️ Rich features, 📦 Optimized build, 🔌 Universal plugins, 🔑 Fully typed APIs."
 				href="https://vitejs.dev"
 			/>
-			<!-- <a class='text-brand text-opacity-70 transition duration-300 hover:text-opacity-90' href='https://vitejs.dev'>Learn more about SvelteJS here.</a> -->
 		</ul>
 	</div>
 </section>
