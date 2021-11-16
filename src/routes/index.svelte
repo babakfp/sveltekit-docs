@@ -10,7 +10,7 @@
 <section class="mt-12 md:flex items-center gap:10 md:mt-16">
 	<div class="relative grid gap-8 mx-auto w-full max-w-sm">
 		<div class="text-center">
-			<h1 class="text-2xl font-semibold italic">A fully featured web framework for <a class="text-brand not-italic" href="https://svelte.dev">SvelteJS</a></h1>
+			<h1 class="text-2xl font-semibold italic">A fully featured web framework for <a class="text-brand not-italic" href="https://svelte.dev" target="_blank">SvelteJS</a></h1>
 			<h2 class="text-lg mt-2">SvelteKIt includes everything you need to create a fully functional web app.</h2>
 		</div>
 		
@@ -80,6 +80,5 @@
 		&:hover,
 		&:focus
 			transform: translateY(-4px)
-			box-shadow: 0 8px 20px rgb(145 71 255 / 60%)
-			transition: 200ms
+			box-shadow: 0 4px 20px rgb(145 71 255 / 60%)
 </style>

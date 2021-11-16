@@ -20,7 +20,7 @@
 	}
 
 	.btn--brand:not(.btn--outline) {
-		@apply bg-brand text-white;
+		@apply bg-brand text-white hover:bg-brandp;
 	}
 
 	.link {
